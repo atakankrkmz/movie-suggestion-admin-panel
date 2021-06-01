@@ -72,11 +72,11 @@ const CreateDirector = (props) => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             type="text"
-            class="form-control"
+            className="form-control"
             aria-describedby="helpId"
             placeholder="Tim Burton"
           />
-          <small id="helpId" class="form-text text-muted">
+          <small id="helpId" className="form-text text-muted">
             Insert the director's name
           </small>
         </div>
@@ -87,7 +87,7 @@ const CreateDirector = (props) => {
           <input
             type="file"
             name="file"
-            class="form-control"
+            className="form-control"
             id="customFile"
             onChange={(e) => {
               let file = e.target.files[0];
@@ -108,11 +108,11 @@ const CreateDirector = (props) => {
             value={bornIn}
             onChange={(e) => setBornIn(e.target.value)}
             type="text"
-            class="form-control"
+            className="form-control"
             aria-describedby="helpId"
             placeholder="Tim Burton"
           />
-          <small id="helpId" class="form-text text-muted">
+          <small id="helpId" className="form-text text-muted">
             Insert the director's born date
           </small>
         </div>
@@ -122,17 +122,17 @@ const CreateDirector = (props) => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             type="text"
-            class="form-control"
+            className="form-control"
             aria-describedby="helpId"
             placeholder="The director of movie which we first watched together"
           />
-          <small id="helpId" class="form-text text-muted">
+          <small id="helpId" className="form-text text-muted">
             About the director
           </small>
         </div>
 
         <div className="form-group">
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             Add Director
           </button>
         </div>
