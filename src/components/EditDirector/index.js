@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import DatePicker from "react-datepicker";
-import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
 
 const mainurl = "https://moviesuggestionwebapi.azurewebsites.net/api/";
-const TITLE = "Edit Director";
 
 class EditDirector extends Component {
   constructor(props) {
@@ -126,9 +124,6 @@ class EditDirector extends Component {
   render() {
     return (
       <div>
-        <Helmet>
-          <title>{TITLE}</title>
-        </Helmet>
         <h3>Edit "{this.state.directorname}"</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">

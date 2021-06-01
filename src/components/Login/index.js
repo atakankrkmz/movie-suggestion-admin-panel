@@ -1,9 +1,6 @@
 import { React, useState } from "react";
-import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
 import { login } from "../../actions";
-
-const TITLE = "Login";
 
 const LoginPage = (props) => {
   const [email, setEmail] = useState("");
@@ -11,9 +8,6 @@ const LoginPage = (props) => {
 
   return (
     <div className="container mt-5">
-      <Helmet>
-        <title>{TITLE}</title>
-      </Helmet>
       <h3>login page</h3>
       <form
         onSubmit={(e) => {

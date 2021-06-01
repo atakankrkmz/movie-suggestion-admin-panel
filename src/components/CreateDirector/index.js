@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import axios from "axios";
-import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
 
 const mainurl = "https://moviesuggestionwebapi.azurewebsites.net/api/";
-const TITLE = "Add Director";
 
 const CreateDirector = (props) => {
   const [name, setName] = useState("");
@@ -60,9 +58,6 @@ const CreateDirector = (props) => {
 
   return (
     <div>
-      <Helmet>
-        <title>{TITLE}</title>
-      </Helmet>
       <h3>Add new director</h3>
       <form onSubmit={onSubmit}>
         <div className="form-group">

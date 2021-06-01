@@ -2,11 +2,9 @@ import React, { Component } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
-import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
 
 const mainurl = "https://moviesuggestionwebapi.azurewebsites.net/api/";
-const TITLE = "Add Movie";
 
 class CreateMovie extends Component {
   constructor(props) {
@@ -117,14 +115,6 @@ class CreateMovie extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    // const movie ={
-    //     directorname: this.state.directorname,
-    //     moviename: this.state.moviename,
-    //     description: this.state.description,
-    //     duration: this.state.duration,
-    //     date: this.state.date
-    // }
-
     let token = this.props.token;
     let name = this.state.name;
     let description = this.state.description;
@@ -162,25 +152,11 @@ class CreateMovie extends Component {
         console.log(err);
         alert("Something went wrong");
       });
-
-    // axios.post(`${mainurl}movie/add`, movie)
-    // .then(response => {
-    //     alert(response.data);
-
-    //     console.log(response.data);
-    // })
-    // .catch(err => {
-    //     console.log(err);
-    //     alert('Something went wrong');
-    // });
   }
 
   render() {
     return (
       <div>
-        <Helmet>
-          <title>{TITLE}</title>
-        </Helmet>
         <h3>Add new movie</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">

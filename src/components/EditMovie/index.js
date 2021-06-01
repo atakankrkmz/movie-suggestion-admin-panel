@@ -2,11 +2,9 @@ import React, { Component } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
-import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
 
 const mainurl = "https://moviesuggestionwebapi.azurewebsites.net/api/";
-const TITLE = "Edit Movie";
 
 class EditMovie extends Component {
   constructor(props) {
@@ -186,9 +184,6 @@ class EditMovie extends Component {
   render() {
     return (
       <div>
-        <Helmet>
-          <title>{TITLE}</title>
-        </Helmet>
         <h3>Add new movie</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
