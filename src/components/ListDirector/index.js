@@ -6,6 +6,7 @@ const mainurl = "https://moviesuggestionwebapi.azurewebsites.net/api/";
 
 const Director = (props) => (
   <tr>
+    <th scope="row">{props.director.id}</th>
     <td>
       <img
         src={
@@ -86,9 +87,10 @@ export default class DirectorList extends Component {
   render() {
     return (
       <div>
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
+              <th scope="col">#</th>
               <th scope="col">Image</th>
               <th scope="col">Director</th>
               <th scope="col">Description</th>

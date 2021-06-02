@@ -6,22 +6,20 @@ const mainurl = "https://moviesuggestionwebapi.azurewebsites.net/api/";
 
 const Movie = (props) => (
   <tr>
+    <th scope="row">{props.movie.id}</th>
     <td>
+      {}
       <img
+        className="img-thumbnail"
         src={
           "https://moviesuggestionwebapi.azurewebsites.net/uploads/moviecontent/posters/" +
           props.movie.poster
         }
         alt="posterimg"
-        width="100px"
-        height="200px"
       />
     </td>
     <td>{props.movie.name}</td>
     <td>{props.movie.description.substring(0, 15)}</td>
-    <td>{props.movie.directorId}</td>
-    <td>{props.movie.genreId}</td>
-    <td>{props.movie.poster}</td>
     <td>{props.movie.boxOffice}</td>
     <td>{props.movie.releaseDate.substring(0, 4)}</td>
     <td>
@@ -80,14 +78,13 @@ export default class MovieList extends Component {
   render() {
     return (
       <div>
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
+              <th scope="col">#</th>
               <th scope="col">Poster</th>
               <th scope="col">Name</th>
               <th scope="col">Description</th>
-              <th scope="col">Director Id</th>
-              <th scope="col">Genre Id</th>
               <th scope="col">Box Office</th>
               <th scope="col">Release Date</th>
               <th scope="col">Actions</th>

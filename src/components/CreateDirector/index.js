@@ -76,7 +76,7 @@ const CreateDirector = (props) => {
           </small>
         </div>
         <div className="form-group">
-          <label className="form-label" for="customFile">
+          <label className="form-label" htmlFor="customFile">
             Director Porte:{" "}
           </label>
           <input
