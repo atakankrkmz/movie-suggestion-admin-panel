@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-const mainurl = "https://moviesuggestionwebapi.azurewebsites.net/api/";
+const mainurl = `${process.env.REACT_APP_API_URL}api/`;
 
 const Movie = (props) => (
   <tr>
@@ -12,9 +12,11 @@ const Movie = (props) => (
       <img
         className="img-thumbnail"
         src={
-          "https://moviesuggestionwebapi.azurewebsites.net/uploads/moviecontent/posters/" +
+          "https://filmoneriapi.otokon.tech/uploads/moviecontent/posters/" +
           props.movie.poster
         }
+	width="100px"
+	height="100px"
         alt="posterimg"
       />
     </td>

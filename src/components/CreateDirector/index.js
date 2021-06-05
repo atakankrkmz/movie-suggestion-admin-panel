@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import axios from "axios";
 import { connect } from "react-redux";
 
-const mainurl = "https://moviesuggestionwebapi.azurewebsites.net/api/";
+const mainurl = `${process.env.REACT_APP_API_URL}api/`;
 
 const CreateDirector = (props) => {
   const [name, setName] = useState("");

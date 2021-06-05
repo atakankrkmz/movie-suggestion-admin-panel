@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-const mainurl = "https://moviesuggestionwebapi.azurewebsites.net/api/";
+const mainurl = `${process.env.REACT_APP_API_URL}api/`;
 
 const Director = (props) => (
   <tr>
@@ -10,8 +10,7 @@ const Director = (props) => (
     <td>
       <img
         src={
-          "https://moviesuggestionwebapi.azurewebsites.net/" +
-          "uploads/directorcontent/posters/" +
+          "https://filmoneriapi.otokon.tech/uploads/directorcontent/posters/" +
           props.director.portre
         }
         alt="directorimg"
