@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./navbar.css";
 
 const Navbar = () => {
   return (
     <div className="container">
-      <nav className="navbar navbar-expand-lg navbar-light bg-warning">
+      <div className="navbar navbar-expand-lg navbar-light bg-warning">
         <Link to="/" className="nav-brand">
           Movie Suggestion
         </Link>
         <button
-          className="navbar-toggler collapsed"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -47,20 +48,20 @@ const Navbar = () => {
                 Login
               </Link>
             </li>
+            <li className="nav-item mt-2 ml-4">
+              <div className="dropdown">
+                <span style={{ color: "darkslategray" }}>Support Content</span>
+                <i class="fas fa-sort-down ml-2"></i>
+                <div className="dropdown-content">
+                  <Link to="/language/add" className="dropdown-item">
+                    Add a language
+                  </Link>
+                </div>
+              </div>
+            </li>
           </ul>
-          <form className="form-inline my-2 my-lg-0">
-            <input
-              className="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-dark my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </form>
         </div>
-      </nav>
+      </div>
     </div>
   );
 };

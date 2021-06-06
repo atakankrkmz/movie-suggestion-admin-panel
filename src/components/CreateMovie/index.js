@@ -11,10 +11,11 @@ const CreateMovie = (props) => {
   const [description, setDescription] = useState("");
   const [directorId, setDirectorId] = useState(0);
   const [genreId, setGenreId] = useState(0);
+  const [languageId, setLanguageId] = useState(0);
   const [poster, setPoster] = useState("");
-  const [boxOffice, setBoxOffice] = useState(0);
   const [releaseDate, setReleaseDate] = useState(new Date());
   const [genres, setGenres] = useState([]);
+  const [languages, setLanguages] = useState([]);
   const [directors, setDirectors] = useState([]);
 
   useEffect(() => {
@@ -36,6 +37,18 @@ const CreateMovie = (props) => {
         if (response.data.length > 0) {
           setGenres(response.data.map((genre) => genre));
           setGenreId(response.data[0].id);
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`${mainurl}languages/getall`)
+      .then((response) => {
+        if (response.data.length > 0) {
+          setLanguages(response.data.map((language) => language));
+          setLanguageId(response.data[0].id);
         }
       })
       .catch((err) => console.log(err));
@@ -65,7 +78,7 @@ const CreateMovie = (props) => {
     formdata.append("directorId", directorId);
     formdata.append("genreId", genreId);
     formdata.append("posterFile", poster);
-    formdata.append("boxOffice", boxOffice);
+    formdata.append("languageId", languageId);
     formdata.append("releaseDate", formattedReleaseDate);
 
     await axios({
@@ -156,6 +169,24 @@ const CreateMovie = (props) => {
           </select>
         </div>
         <div className="form-group">
+          <label>language: </label>
+          <select
+            required
+            className="form-control"
+            value={languageId}
+            onChange={(e) => setLanguageId(e.target.value)}
+          >
+            {languages.map(function (language) {
+              return (
+                <option key={language.id} value={language.id}>
+                  {" "}
+                  {language.name}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+        <div className="form-group">
           <label className="form-label" htmlFor="customFile">
             Movie Poster:{" "}
           </label>
@@ -170,22 +201,6 @@ const CreateMovie = (props) => {
             }}
           />
         </div>
-
-        <div className="form-group">
-          <label>BoxOffice: </label>
-          <input
-            value={boxOffice}
-            onChange={(e) => setBoxOffice(e.target.value)}
-            type="text"
-            className="form-control"
-            aria-describedby="helpId"
-            placeholder="125"
-          />
-          <small id="helpId" className="form-text text-muted">
-            How much money did make the movie ?
-          </small>
-        </div>
-
         <div className="form-group">
           <label>Release Date: </label>
           <div>
