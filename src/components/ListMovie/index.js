@@ -15,8 +15,8 @@ const Movie = (props) => (
           "https://filmoneriapi.otokon.tech/uploads/moviecontent/posters/" +
           props.movie.poster
         }
-	width="100px"
-	height="100px"
+        width="100px"
+        height="100px"
         alt="posterimg"
       />
     </td>

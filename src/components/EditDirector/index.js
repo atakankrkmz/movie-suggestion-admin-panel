@@ -132,7 +132,7 @@ class EditDirector extends Component {
               value={this.state.directorname}
               onChange={this.onChangeDirectorname}
               type="text"
-              class="form-control"
+              className="form-control"
               aria-describedby="helpId"
               placeholder="Big Fish"
             />
@@ -156,7 +156,7 @@ class EditDirector extends Component {
               value={this.state.bornIn}
               onChange={this.onChangeBornIn}
               type="text"
-              class="form-control"
+              className="form-control"
               aria-describedby="helpId"
               placeholder="Tim Burton"
             />
@@ -171,7 +171,7 @@ class EditDirector extends Component {
             <input
               type="file"
               name="file"
-              class="form-control"
+              className="form-control"
               id="customFile"
               onChange={(e) => this.onChangeDirectorImg(e)}
             />
@@ -182,7 +182,7 @@ class EditDirector extends Component {
               value={this.state.description}
               onChange={this.onChangeDescription}
               type="text"
-              class="form-control"
+              className="form-control"
               aria-describedby="helpId"
               placeholder="The movie which is watched first together"
             />

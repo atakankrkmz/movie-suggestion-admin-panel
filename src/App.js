@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
@@ -6,6 +7,7 @@ import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import CreateDirector from "./components/CreateDirector";
 import CreateMovie from "./components/CreateMovie";
 import CreateLanguage from "./components/CreateLanguage";
+import CreateGenre from "./components/CreateGenre";
 
 import EditDirector from "./components/EditDirector";
 import EditMovie from "./components/EditMovie";
@@ -14,7 +16,7 @@ import DirectorList from "./components/ListDirector";
 import MovieList from "./components/ListMovie";
 
 import LoginPage from "./components/Login";
-import Navbar from "./components/UI/navbar.component";
+import Navbar from "./components/UI/navbar";
 
 const App = (props) => {
   let token = props.token;
@@ -33,17 +35,17 @@ const App = (props) => {
           <Route path="/director/create" component={CreateDirector} />
           <Route path="/director/edit/:id" component={EditDirector} />
           <Route path="/language/add" component={CreateLanguage} />
+          <Route path="/genre/add" component={CreateGenre} />
         </div>
       </Router>
     );
-  } else {
-    return (
-      <Router>
-        <Route path="/login" component={LoginPage} />
-        <Redirect to="login" />
-      </Router>
-    );
   }
+  return (
+    <Router>
+      <Route path="/login" component={LoginPage} />
+      <Redirect to="login" />
+    </Router>
+  );
 };
 
 const mapStateToProps = (state) => {

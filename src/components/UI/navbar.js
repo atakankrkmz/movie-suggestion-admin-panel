@@ -51,10 +51,13 @@ const Navbar = () => {
             <li className="nav-item mt-2 ml-4">
               <div className="dropdown">
                 <span style={{ color: "darkslategray" }}>Support Content</span>
-                <i class="fas fa-sort-down ml-2"></i>
+                <i className="fas fa-sort-down ml-2"></i>
                 <div className="dropdown-content">
                   <Link to="/language/add" className="dropdown-item">
                     Add a language
+                  </Link>
+                  <Link to="/genre/add" className="dropdown-item">
+                    Add a genre
                   </Link>
                 </div>
               </div>
