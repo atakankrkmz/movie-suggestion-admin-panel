@@ -39,7 +39,7 @@ const LoginPage = (props) => {
             id="exampleInputPassword1"
           />
         </div>
-        <div><h4>v2.1</h4></div>
+        <div><h4>v2.2</h4></div>
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
